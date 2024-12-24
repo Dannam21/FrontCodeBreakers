@@ -29,14 +29,25 @@ function RegisterPage() {
 
   return (
     <div className="register-container">
+      <div className="color-rectangle"></div>
       <form className="register-form" onSubmit={handleSubmit}>
         <h2>Registrarse</h2>
         <label>
-          Nombre de usuario:
+          Nombres de usuario:
           <input
             type="text"
-            name="username"
-            value={formData.username}
+            name="nombres"
+            value={formData.nombres}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label>
+          Apellidos de usuario:
+          <input
+            type="text"
+            name="apellidos"
+            value={formData.apellidos}
             onChange={handleChange}
             required
           />
@@ -47,6 +58,26 @@ function RegisterPage() {
             type="email"
             name="email"
             value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label>
+          Número de Teléfono:
+          <input
+            type="text"
+            name="telefono"
+            value={formData.telefono}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label>
+          Ciudad:
+          <input
+            type="text"
+            name="ciudad"
+            value={formData.ciudad}
             onChange={handleChange}
             required
           />
@@ -75,6 +106,7 @@ function RegisterPage() {
       </form>
     </div>
   );
+  
 }
 
 export default RegisterPage;

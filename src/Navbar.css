@@ -67,10 +67,12 @@
 .btn-login {
   background-color: #fff;
   color: black;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Animación suave */
 }
 
 .btn-login:hover {
-  background-color: #21AAE1;
+  color: #21AAE1; /* Cambia el color del texto a negro */
+
 }
 
 .btn-register {
@@ -79,5 +81,7 @@
 }
 
 .btn-register:hover {
-  background-color: #28a745;
+  background-color: #21AAE1; /* Cambia el color de fondo */
+  color: black; /* Cambia el color del texto a negro */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Animación suave */
 }

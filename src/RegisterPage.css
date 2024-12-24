@@ -7,11 +7,18 @@
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f5f5f5;
+    align-items: stretch; /* Asegura que los hijos tengan la misma altura */
+    height: auto; /* Solo ocupa lo necesario */
+    width: 100%;
     padding: 20px;
   }
+  
+  .color-rectangle {
+    background-color: #21AAE1; /* Ajusta el color como desees */
+    width: 500px; /* Ajusta el ancho del rectángulo */
+    border-radius: 8px; /* Opcional, para esquinas redondeadas */
+  }
+
   
   /* Formulario de registro */
   .register-form {
@@ -23,6 +30,7 @@
     max-width: 400px;
   }
   
+  
   .register-form h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -31,15 +39,15 @@
   
   .register-form label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: bold;
     color: #555;
   }
   
   .register-form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
   }
@@ -47,7 +55,7 @@
   .register-form button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #21AAE1;
     color: white;
     font-size: 16px;
     border: none;
