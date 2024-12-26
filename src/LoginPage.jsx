@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
@@ -12,10 +14,14 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-container">
-      <h2>Iniciar Sesión</h2>
+    <motion.div
+      className="login-container"
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      <h2 className="login-title">Inicia Sesión</h2>
       <form className="login-form" onSubmit={handleLogin}>
-        {/* Campo de correo electrónico */}
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico</label>
           <input
@@ -28,7 +34,6 @@ function LoginPage() {
           />
         </div>
 
-        {/* Campo de contraseña */}
         <div className="form-group">
           <label htmlFor="password">Contraseña</label>
           <input
@@ -41,17 +46,21 @@ function LoginPage() {
           />
         </div>
 
-        {/* Botón de iniciar sesión */}
-        <button type="submit" className="btn-login">
+        <motion.button
+          type="submit"
+          className="btn-login"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           Iniciar Sesión
-        </button>
+        </motion.button>
       </form>
 
-      {/* Enlace para registro */}
       <p className="register-link">
-        ¿No tienes una cuenta? <a href="/register">Regístrate aquí</a>
+        ¿No tienes una cuenta?{' '}
+        <Link to="/register" className="register-link-text">Regístrate aquí</Link>
       </p>
-    </div>
+    </motion.div>
   );
 }
 

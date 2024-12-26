@@ -3,7 +3,8 @@ import "./RegisterPage.css";
 
 function RegisterPage() {
   const [formData, setFormData] = useState({
-    username: "",
+    nombres: "",
+    apellidos: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -23,90 +24,73 @@ function RegisterPage() {
       alert("Las contraseñas no coinciden.");
       return;
     }
-    // Aquí puedes enviar los datos al backend o realizar acciones adicionales.
     alert("Registro exitoso");
   };
 
   return (
     <div className="register-container">
-      <div className="color-rectangle"></div>
       <form className="register-form" onSubmit={handleSubmit}>
-        <h2>Registrarse</h2>
-        <label>
-          Nombres de usuario:
-          <input
-            type="text"
-            name="nombres"
-            value={formData.nombres}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Apellidos de usuario:
-          <input
-            type="text"
-            name="apellidos"
-            value={formData.apellidos}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Correo electrónico:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Número de Teléfono:
-          <input
-            type="text"
-            name="telefono"
-            value={formData.telefono}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Ciudad:
-          <input
-            type="text"
-            name="ciudad"
-            value={formData.ciudad}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Contraseña:
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Confirmar contraseña:
-          <input
-            type="password"
-            name="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <button type="submit">Registrarse</button>
+        <h2>Crear Cuenta</h2>
+
+        <label htmlFor="nombres">Nombres</label>
+        <input
+          type="text"
+          id="nombres"
+          name="nombres"
+          placeholder="Ingresa tus nombres"
+          value={formData.nombres}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="apellidos">Apellidos</label>
+        <input
+          type="text"
+          id="apellidos"
+          name="apellidos"
+          placeholder="Ingresa tus apellidos"
+          value={formData.apellidos}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="email">Correo Electrónico</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Ingresa tu correo"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="password">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Crea una contraseña"
+          value={formData.password}
+          onChange={handleChange}
+          required
+        />
+
+        <label htmlFor="confirmPassword">Confirmar Contraseña</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirma tu contraseña"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+          required
+        />
+
+        <button type="submit" className="btn-register">Registrarse</button>
       </form>
     </div>
   );
-  
 }
 
 export default RegisterPage;

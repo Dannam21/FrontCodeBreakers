@@ -1,69 +1,86 @@
-/* Estilos para la página de inicio de sesión */
+/* Contenedor principal */
 .login-container {
-    position: absolute;
-    top: 50%;        /* Mueve el elemento al 50% del alto */
-    left: 50%;       /* Mueve el elemento al 50% del ancho */
-    transform: translate(-50%, -50%);  /* Ajusta para centrar completamente */
-
+  background-color: #f1f9fe;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
   max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 5% auto;
   text-align: center;
 }
 
-.login-container h2 {
+/* Título */
+.login-title {
+  font-size: 1.8rem;
+  color: #134a67;
   margin-bottom: 20px;
-  color: #333;
+  font-weight: bold;
 }
 
-.login-form .form-group {
+/* Grupo de formularios */
+.form-group {
   margin-bottom: 15px;
   text-align: left;
 }
 
-.login-form label {
-  display: block;
+label {
+  font-size: 0.9rem;
+  color: #134a67;
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
-.login-form input {
+input {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  font-size: 0.95rem;
+  border: 1px solid #bfe6f8;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
 }
 
-.login-form .btn-login {
+input:focus {
+  border-color: #46bcea;
+  outline: none;
+}
+
+/* Botón de inicio de sesión */
+.btn-login {
   width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 16px;
+  padding: 12px;
+  background-color: #21aae1;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.login-form .btn-login:hover {
-  background-color: #0056b3;
+.btn-login:hover {
+  background-color: #1084b9;
 }
 
+.btn-login:active {
+  transform: scale(0.98);
+}
+
+/* Enlace de registro */
 .register-link {
-  margin-top: 10px;
-  font-size: 14px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #134a67;
 }
 
-.register-link a {
-  color: #007bff;
+.register-link-text {
+  color: #21aae1;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.register-link a:hover {
+.register-link-text:hover {
+  color: #1084b9;
   text-decoration: underline;
 }

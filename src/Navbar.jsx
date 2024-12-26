@@ -1,30 +1,50 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-import './Navbar.css';
-import logo from './assets/logo/logo2.png';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import logo from "./assets/logo/logo2.png";
 
 function Navbar() {
-
   return (
-    <nav className="navbar">
-      {/* Logo en el lado izquierdo */}
-      <div className="navbar-logo">
-        <img src={logo} alt="Logo" />
+    <nav className="barra-navegacion">
+      {/* Logo */}
+      <div className="logo-navegacion">
+        <Link to="/">
+          <img src={logo} alt="Logo Handin" className="logo-imagen" />
+        </Link>
       </div>
 
       {/* Lista de navegación */}
-      <ul className="navbar-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul className="lista-navegacion">
+        <li>
+          <Link to="/" className="enlace-navegacion">
+            Inicio
+          </Link>
+        </li>
+        <li>
+          <Link to="/nosotros" className="enlace-navegacion">
+            Nosotros
+          </Link>
+        </li>
+        <li>
+          <Link to="/servicios" className="enlace-navegacion">
+            Servicios
+          </Link>
+        </li>
+        <li>
+          <Link to="/contacto" className="enlace-navegacion">
+            Contacto
+          </Link>
+        </li>
       </ul>
 
-      <div className="navbar-buttons">
-        <Link to="/login" className="btn-login">Iniciar Sesión</Link>
-        <Link to="/register" className="btn-register">Registrarse</Link>
+      {/* Botones */}
+      <div className="botones-navegacion">
+        <Link to="/login" className="btn-iniciar-sesion">
+          Iniciar Sesión
+        </Link>
+        <Link to="/register" className="btn-registrarse">
+          Registrarse
+        </Link>
       </div>
     </nav>
   );

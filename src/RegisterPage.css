@@ -1,70 +1,74 @@
 /* Contenedor principal */
 .register-container {
-    position: absolute;
-    top: 50%;        /* Mueve el elemento al 50% del alto */
-    left: 50%;       /* Mueve el elemento al 50% del ancho */
-    transform: translate(-50%, -50%);  /* Ajusta para centrar completamente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f1f9fe;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: stretch; /* Asegura que los hijos tengan la misma altura */
-    height: auto; /* Solo ocupa lo necesario */
-    width: 100%;
-    padding: 20px;
-  }
-  
-  .color-rectangle {
-    background-color: #21AAE1; /* Ajusta el color como desees */
-    width: 500px; /* Ajusta el ancho del rectángulo */
-    border-radius: 8px; /* Opcional, para esquinas redondeadas */
-  }
+/* Formulario */
+.register-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
 
-  
-  /* Formulario de registro */
-  .register-form {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  
-  .register-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .register-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  .register-form input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .register-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #21AAE1;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .register-form button:hover {
-    background-color: #0056b3;
-  }
-  
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #134a67;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Estilos de etiqueta */
+.register-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #134a67;
+  font-weight: bold;
+}
+
+/* Inputs */
+.register-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #bfe6f8;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #134a67;
+}
+
+.register-form input:focus {
+  border-color: #21aae1;
+  outline: none;
+}
+
+/* Botón de registro */
+.btn-register {
+  width: 100%;
+  padding: 12px;
+  background-color: #21aae1;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-register:hover {
+  background-color: #1084b9;
+  transform: scale(1.05);
+}
+
+.btn-register:active {
+  transform: scale(0.98);
+}

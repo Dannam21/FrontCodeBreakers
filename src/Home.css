@@ -1,30 +1,178 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía global */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1f9fe; /* Fondo principal claro */
+  color: #134a67; /* Texto base oscuro */
+  line-height: 1.6;
+}
+
+/* Contenedor principal */
 .home-container {
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center;     /* Centra verticalmente */
-  height: 100vh;           
+  align-items: center;
+  justify-content: center;
+  color: white;
   text-align: center;
-  width: 50%;          /* O cualquier valor que determines */
-  margin: 0 auto;      
-  }
-  
-  
-  .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    z-index: -1;
-  }
-  
-  .home-content {
-    position: absolute;
-    top: 50%;        /* Mueve el elemento al 50% del alto */
-    left: 50%;       /* Mueve el elemento al 50% del ancho */
-    transform: translate(-50%, -50%);  /* Ajusta para centrar completamente */
-    z-index: 1; 
-    color: white;
-  }
-  
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ), /* Degradado que cubre todo el contenedor */
+    url("/src/assets/videos/hero-background.jpg") no-repeat center center / cover; /* Imagen de fondo alternativa */
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlay {
+  z-index: 1;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.hero-button {
+  background-color: #21aae1;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  background-color: #1084b9;
+  transform: scale(1.1);
+}
+
+/* Features Section */
+.features {
+  padding: 60px 20px;
+  background-color: #e2f3fc;
+}
+
+.features-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #0e6996;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 10px;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 1.6rem;
+  color: #134a67;
+  margin-bottom: 12px;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #10597c;
+}
+
+/* Call to Action Section */
+.cta {
+  background: linear-gradient(90deg, #21aae1, #1084b9);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.cta-description {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: white;
+  color: #21aae1;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  background-color: #134a67;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+  background-color: #134a67;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 1rem;
+}

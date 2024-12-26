@@ -1,0 +1,96 @@
+/* Contenedor general */
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1f9fe;
+    color: #134a67;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Hero Section */
+  .services-hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #21aae1, #1084b9);
+    color: white;
+  }
+  
+  .services-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .services-description {
+    font-size: 1.2rem;
+  }
+  
+  /* Services Grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 50px 20px;
+  }
+  
+  .service-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .service-title {
+    font-size: 1.5rem;
+    color: #134a67;
+    margin-bottom: 10px;
+  }
+  
+  .service-description {
+    font-size: 1rem;
+    color: #10597c;
+  }
+  
+  /* Call to Action */
+  .services-cta {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #21aae1, #1084b9);
+    color: white;
+  }
+  
+  .cta-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    background-color: white;
+    color: #21aae1;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .cta-button:hover {
+    background-color: #134a67;
+    color: white;
+    transform: scale(1.05);
+  }
+  
