@@ -8,6 +8,8 @@ function RegisterPage() {
     email: "",
     password: "",
     confirmPassword: "",
+    city: "",
+    phone: "",
   });
 
   const handleChange = (e) => {
@@ -18,13 +20,43 @@ function RegisterPage() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       alert("Las contraseñas no coinciden.");
       return;
     }
-    alert("Registro exitoso");
+
+    try {
+      const response = await fetch("http://localhost:3000/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: formData.nombres,
+          lastName: formData.apellidos,
+          email: formData.email,
+          password: formData.password,
+          role: formData.role,
+          city: formData.city,
+          phone: formData.phone,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error("Error en el registro:", errorData);
+        throw new Error(errorData.message || "Error al registrar el usuario");
+      }
+
+      const data = await response.json();
+      alert("Registro exitoso");
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+      alert("Hubo un error al registrar el usuario");
+    }
   };
 
   return (
@@ -85,6 +117,26 @@ function RegisterPage() {
           value={formData.confirmPassword}
           onChange={handleChange}
           required
+        />
+
+        <label htmlFor="city">Ciudad</label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Ingresa tu ciudad"
+          value={formData.city}
+          onChange={handleChange}
+        />
+
+        <label htmlFor="phone">Teléfono</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="Ingresa tu teléfono"
+          value={formData.phone}
+          onChange={handleChange}
         />
 
         <button type="submit" className="btn-register">Registrarse</button>
