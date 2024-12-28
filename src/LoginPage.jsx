@@ -1,16 +1,44 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); 
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+    
+    const userData = { email, password };
+    
+    try {
+      const response = await fetch('http://localhost:3000/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setError(errorData.message || 'Credenciales incorrectas');
+        return;
+      }
+
+      const data = await response.json();
+      const token = data.token;  
+
+      localStorage.setItem('token', token);
+      
+      navigate('/dashboard');  
+    } catch (error) {
+      setError('Hubo un error al iniciar sesión');
+      console.error(error);
+    }
   };
 
   return (
@@ -45,6 +73,8 @@ function LoginPage() {
             required
           />
         </div>
+
+        {error && <p className="error-message">{error}</p>} {/* Mostrar mensaje de error */}
 
         <motion.button
           type="submit"
